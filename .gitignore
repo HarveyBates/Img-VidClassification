@@ -45,6 +45,9 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
+# User defined
 .DS_Store
 .ipynb_checkpoints
 *.zip
+bin
+*.swp
