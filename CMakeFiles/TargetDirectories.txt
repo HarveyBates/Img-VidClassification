@@ -1,3 +1,0 @@
-/Users/harveybates/Documents/Img-VidClassification/CMakeFiles/rebuild_cache.dir
-/Users/harveybates/Documents/Img-VidClassification/CMakeFiles/edit_cache.dir
-/Users/harveybates/Documents/Img-VidClassification/CMakeFiles/ImgClassification.dir
