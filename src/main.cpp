@@ -3,8 +3,11 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/core.hpp>
 #include <iostream>
+#include "main.h"
 
 int main(){
+	CameraIssue _camIssue;
+	_camIssue.dealWithCamera();
 	cv::Mat frame;
 	cv::VideoCapture cap;
 	if(!cap.open(0)){
