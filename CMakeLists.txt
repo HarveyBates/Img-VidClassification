@@ -5,12 +5,10 @@ project("ImgClassification")
 find_package(OpenCV REQUIRED)
 
 set(NAME_SRC 
-	src/main.cpp
-	src/permission.cpp)
+	src/main.cpp)
 
 set(NAME_HEADERS 
-	include/main.h
-	include/permission.h)
+	include/main.h)
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
 

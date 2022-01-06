@@ -1,27 +1,44 @@
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/core.hpp>
-#include <iostream>
 #include "main.h"
 
-int main(){
-	CameraIssue _camIssue;
-	_camIssue.dealWithCamera();
-	cv::Mat frame;
-	cv::VideoCapture cap;
-	if(!cap.open(0)){
+
+int main() {
+
+	cv::Mat vid;
+	cv::VideoCapture cap(0);
+
+	if (!cap.isOpened()) {
+		std::cerr << 
+			"Unable to open webcamera. Check permissions." 
+			<< std::endl;
 		return 1;
 	}
-	while(true){
-		cap >> frame;
-		if(frame.empty()){
-			break;
-		}
-		cv::imshow("Webcam", frame);
-		if(cv::waitKey(1) == 27){
-			break; // ESC to end
-		}
+
+	cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+	cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+	cap.set(cv::CAP_PROP_CONVERT_RGB, false);
+
+
+	while (true) {
+
+		cap.set(cv::CAP_PROP_FPS, 10);
+
+		cap >> vid;
+
+		cv::putText(vid,
+				"test",
+				cv::Point(10, vid.rows / 2),
+				cv::FONT_HERSHEY_DUPLEX,
+				1.0,
+				CV_RGB(118, 185, 0),
+				2);
+
+		cv::imshow("Webcam", vid);
+
+		cv::waitKey(25);
+		
 	}
+
 	return 0;
+
 }
